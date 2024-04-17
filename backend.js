@@ -7,10 +7,10 @@ const port = 3000;
 
 // MySQL connection configuration
 const connection = mysql.createConnection({
-  host: "localhost",
-  user: "your_mysql_username",
-  password: "your_mysql_password",
-  database: "your_database_name",
+  host: "monorail.proxy.rlwy.net",
+  user: "root",
+  password: "vPpQVpHlLORTbyFQDchbOpCNiqxtKDmi",
+  database: "railway",
 });
 
 // Connect to MySQL
@@ -27,7 +27,7 @@ app.use(bodyParser.json());
 
 // Serve the HTML page on the root route
 app.get("/", (req, res) => {
-  res.send(/* Your HTML page */);
+  res.send("hello from tamar");
 });
 
 // POST endpoint to handle phone number submission
