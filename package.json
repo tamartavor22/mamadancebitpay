@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/tamartavor22/mamadancebitpay/issues"
   },
-  "homepage": "https://github.com/tamartavor22/mamadancebitpay#readme"
+  "homepage": "https://github.com/tamartavor22/mamadancebitpay#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "mysql": "^2.18.1",
+    "path": "^0.12.7"
+  }
 }
