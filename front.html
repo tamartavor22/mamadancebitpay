@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello Form</title>
+    <style>
+      .container {
+        max-width: 400px;
+        margin: 50px auto;
+        text-align: center;
+      }
+      input[type="tel"] {
+        padding: 10px;
+        margin-bottom: 20px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      input[type="submit"] {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+      input[type="submit"]:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Hello</h2>
+      <form id="phoneForm">
+        <input
+          type="tel"
+          id="phoneNumber"
+          name="phoneNumber"
+          placeholder="Enter your phone number"
+        />
+        <input type="submit" id="submitButton" value="Submit" disabled />
+      </form>
+    </div>
+
+    <script>
+      document
+        .getElementById("phoneNumber")
+        .addEventListener("input", function () {
+          var phoneNumberInput = document.getElementById("phoneNumber");
+          var submitButton = document.getElementById("submitButton");
+          if (phoneNumberInput.value.length >= 10) {
+            submitButton.removeAttribute("disabled");
+          } else {
+            submitButton.setAttribute("disabled", "disabled");
+          }
+        });
+
+      document
+        .getElementById("phoneForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          var phoneNumber = document.getElementById("phoneNumber").value;
+          // Send phone number to backend
+          // Example: replace 'backend_url' with your actual backend URL
+          //   fetch("backend_url", {
+          //     method: "POST",
+          //     headers: {
+          //       "Content-Type": "application/json",
+          //     },
+          //     body: JSON.stringify({ phoneNumber: phoneNumber }),
+          //   })
+          //     .then((response) => {
+          //       window.location.href =
+          //         "https://www.bitpay.co.il/app/me/B214923F-7C82-1C18-C58F-A4A69E0AF534B737";
+          //     })
+          //     .catch((error) => {
+          //       console.error("Error:", error);
+          //     });
+          window.location.href =
+            "https://www.bitpay.co.il/app/me/B214923F-7C82-1C18-C58F-A4A69E0AF534B737";
+        });
+    </script>
+  </body>
+</html>
