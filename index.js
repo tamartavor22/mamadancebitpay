@@ -2,7 +2,7 @@ const http = require("http");
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
-const mysql = require("mysql");
+const mysql = require("mysql2");
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -17,14 +17,14 @@ const connection = mysql.createConnection({
 });
 
 // Connect to MySQL
-connection.connect((err) => {
-  console.log(process.env.MYSQLHOST);
-  if (err) {
-    console.error("Error connecting to MySQL:", err);
-    return;
-  }
-  console.log("Connected to MySQL");
-});
+// connection.connect((err) => {
+//   console.log(process.env.MYSQLHOST);
+//   if (err) {
+//     console.error("Error connecting to MySQL:", err);
+//     return;
+//   }
+//   console.log("Connected to MySQL");
+// });
 
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
@@ -42,8 +42,8 @@ app.post("/phonenumber", (req, res) => {
   const { phoneNumber } = req.body;
   console.log(phoneNumber);
   // Insert the phone number into the database
-  const sql = "INSERT INTO phone_numbers (number) VALUES (?)";
-  connection.query(sql, [phoneNumber], (err, result) => {
+  const sql = `INSERT INTO phone_numbers ${phoneNumber} VALUES (?)`;
+  connection.query(sql, (err, result) => {
     if (err) {
       console.error("Error inserting phone number into MySQL:", err);
       res.status(500).send("Error inserting phone number into database");
