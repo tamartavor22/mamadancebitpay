@@ -42,7 +42,7 @@ app.post("/phonenumber", (req, res) => {
   const { phoneNumber } = req.body;
   console.log(phoneNumber);
   // Insert the phone number into the database
-  const sql = `INSERT INTO phone_numbers ${phoneNumber} VALUES (?)`;
+  const sql = `INSERT INTO phone_numbers number VALUES ${phoneNumber}`;
   connection.query(sql, (err, result) => {
     if (err) {
       console.error("Error inserting phone number into MySQL:", err);
