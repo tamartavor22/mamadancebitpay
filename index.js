@@ -29,10 +29,10 @@ app.use(bodyParser.json());
 
 // Serve the HTML page on the root route
 app.get("/", (req, res) => {
-  res.send("hey from tamar");
-  // const fileName = "front.html"; // Example file name
-  // const absolutePath = path.join(__dirname, fileName); // Assuming files are stored in a directory named 'files'
-  // res.sendFile(absolutePath);
+  // res.send("hey from tamar");
+  const fileName = "front.html";
+  const absolutePath = path.join(__dirname, fileName);
+  res.sendFile(absolutePath);
 });
 
 // POST endpoint to handle phone number submission
