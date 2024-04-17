@@ -9,15 +9,16 @@ const port = process.env.PORT || 3000;
 
 // MySQL connection configuration
 const connection = mysql.createConnection({
-  host: process.env.MYSQLHOST,
-  user: process.env.MYSQLUSER,
-  password: process.env.MYSQLPASSWORD,
-  database: process.env.MYSQLDATABASE,
-  port: process.env.MYSQLPORT,
+  host: "monorail.proxy.rlwy.net",
+  user: "root",
+  password: "vPpQVpHlLORTbyFQDchbOpCNiqxtKDmi",
+  database: "railway",
+  port: "53853",
 });
 
 // Connect to MySQL
 connection.connect((err) => {
+  console.log(process.env.MYSQLHOST);
   if (err) {
     console.error("Error connecting to MySQL:", err);
     return;
