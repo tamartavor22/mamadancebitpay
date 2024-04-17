@@ -1,10 +1,10 @@
+const http = require("http");
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 const mysql = require("mysql");
 
 const app = express();
-const port = 3000;
 
 // MySQL connection configuration
 // const connection = mysql.createConnection({
@@ -52,6 +52,6 @@ app.post("/phonenumber", (req, res) => {
 });
 
 // Start the server
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Server is running`);
 });
