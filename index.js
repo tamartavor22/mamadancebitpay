@@ -1,9 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
-
-// const mysql = require("mysql");
-// const frontHtml = require("./front.html")
+const mysql = require("mysql");
 
 const app = express();
 const port = 3000;
@@ -30,9 +28,10 @@ app.use(bodyParser.json());
 
 // Serve the HTML page on the root route
 app.get("/", (req, res) => {
-  const fileName = "front.html"; // Example file name
-  const absolutePath = path.join(__dirname, fileName); // Assuming files are stored in a directory named 'files'
-  res.sendFile(absolutePath);
+  res.send("hey from tamar");
+  // const fileName = "front.html"; // Example file name
+  // const absolutePath = path.join(__dirname, fileName); // Assuming files are stored in a directory named 'files'
+  // res.sendFile(absolutePath);
 });
 
 // POST endpoint to handle phone number submission
