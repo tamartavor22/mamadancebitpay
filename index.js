@@ -5,6 +5,7 @@ const path = require("path");
 const mysql = require("mysql");
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 // MySQL connection configuration
 // const connection = mysql.createConnection({
@@ -52,6 +53,6 @@ app.post("/phonenumber", (req, res) => {
 });
 
 // Start the server
-app.listen(PORT, () => {
+app.listen(port, "0.0.0.0", () => {
   console.log(`Server is running`);
 });
