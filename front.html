@@ -76,6 +76,11 @@
           name="phoneNumber"
           placeholder="הזינו את מספר הטלפון שלכם"
         />
+        <p onclick="copyText()">
+          העבירו את התשלום למספר הטלפון הבא: 0509584354
+        </p>
+        <svg onclick="copyText()" width="50" height="50" src="copy.svg"></svg>
+
         <input type="submit" id="submitButton" value="מעבר לביט" disabled />
       </form>
     </div>
@@ -118,6 +123,12 @@
           window.location.href =
             "https://www.bitpay.co.il/app/me/B214923F-7C82-1C18-C58F-A4A69E0AF534B737";
         });
+
+      function copyText() {
+        const textToCopy = "050-9584354"; // Hardcoded text to copy
+        navigator.clipboard.writeText(textToCopy);
+        alert("Text copied to clipboard!");
+      }
     </script>
   </body>
 </html>
