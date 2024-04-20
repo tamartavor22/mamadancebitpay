@@ -16,16 +16,6 @@ const connection = mysql.createConnection({
   port: "53853",
 });
 
-// Connect to MySQL
-// connection.connect((err) => {
-//   console.log(process.env.MYSQLHOST);
-//   if (err) {
-//     console.error("Error connecting to MySQL:", err);
-//     return;
-//   }
-//   console.log("Connected to MySQL");
-// });
-
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
 

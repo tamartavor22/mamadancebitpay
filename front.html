@@ -2,28 +2,46 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
     <title>Hello Form</title>
     <style>
+      html {
+        margin: 0;
+        height: 100%;
+      }
+      body {
+        font-family: "Noto Sans Hebrew", sans-serif;
+        background: linear-gradient(to bottom right, #2b5386 0%, #2db7ba 100%);
+      }
       .container {
         max-width: 400px;
         margin: 50px auto;
         text-align: center;
+        color: #fff;
       }
-      input[type="tel"] {
+      #secondTitle {
+        margin-bottom: 50px;
+      }
+      #phoneNumber {
         padding: 10px;
         margin-bottom: 20px;
         width: 100%;
         box-sizing: border-box;
+        border-width: 0;
+        text-align: right;
+        border-radius: 20px;
       }
-      input[type="submit"] {
+      #submitButton {
         padding: 10px 20px;
-        background-color: #007bff;
+        background-color: #d82721;
         color: #fff;
         border: none;
         cursor: pointer;
+        border-radius: 20px;
+        outline-width: 0;
+        font-weight: bold;
       }
-      input[type="submit"]:disabled {
+      #submitButton:disabled {
         background-color: #ccc;
         cursor: not-allowed;
       }
@@ -31,15 +49,16 @@
   </head>
   <body>
     <div class="container">
-      <h2>Hello</h2>
+      <h2>מאמא דאנס</h2>
+      <h1 id="secondTitle">אירוע התרמה לעמותת<br />הותיר אחריו חבר.ה</h1>
       <form id="phoneForm">
         <input
           type="tel"
           id="phoneNumber"
           name="phoneNumber"
-          placeholder="Enter your phone number"
+          placeholder="הזינו את מספר הטלפון שלכם"
         />
-        <input type="submit" id="submitButton" value="Submit" disabled />
+        <input type="submit" id="submitButton" value="מעבר לביט" disabled />
       </form>
     </div>
 
