@@ -12,34 +12,52 @@
       body {
         font-family: "Noto Sans Hebrew", sans-serif;
         background: linear-gradient(to bottom right, #2b5386 0%, #2db7ba 100%);
+        height: 100%;
       }
       .container {
-        max-width: 400px;
-        margin: 50px auto;
+        width: 80%;
+        height: 50%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
         text-align: center;
         color: #fff;
       }
+      #firstTitle {
+        font-size: 60px;
+      }
       #secondTitle {
         margin-bottom: 50px;
+        font-size: 80px;
+      }
+      #phoneForm {
+        flex-direction: column;
+        display: flex;
+        align-items: center;
       }
       #phoneNumber {
-        padding: 10px;
-        margin-bottom: 20px;
+        padding: 30px;
+        margin-bottom: 40px;
         width: 100%;
         box-sizing: border-box;
         border-width: 0;
+        font-size: 30px;
         text-align: right;
-        border-radius: 20px;
+        border-radius: 50px;
       }
       #submitButton {
-        padding: 10px 20px;
+        padding: 20px 40px;
         background-color: #d82721;
         color: #fff;
         border: none;
         cursor: pointer;
-        border-radius: 20px;
+        border-radius: 50px;
         outline-width: 0;
         font-weight: bold;
+        font-size: 30px;
       }
       #submitButton:disabled {
         background-color: #ccc;
@@ -49,7 +67,7 @@
   </head>
   <body>
     <div class="container">
-      <h2>מאמא דאנס</h2>
+      <h2 id="firstTitle">מאמא דאנס</h2>
       <h1 id="secondTitle">אירוע התרמה לעמותת<br />הותיר אחריו חבר.ה</h1>
       <form id="phoneForm">
         <input
