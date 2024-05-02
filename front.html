@@ -108,7 +108,6 @@
         <a
           href="https://bitpay.poalimlinks.co.il/app/share-info?i=193506298461_19hAhcL1"
           target="_blank"
-          disabled
           ><button class="groupButton" id="button2" disabled>
             תרומה של 50
           </button></a
@@ -142,7 +141,7 @@
       </div>
 
       <p onclick="copyText()" style="font-size: 50px; margin-bottom: 0px">
-        לבחירת סכום אחר העתיקו את מספר הטלפון הבא
+        לבחירת סכום אחר העתיקו את מספר הטלפון הבא והדביקו אותו באפליקציית ביט
       </p>
       <div
         style="
@@ -206,12 +205,6 @@
           050-9584354
         </p>
       </div>
-      <!-- <input
-          type="submit"
-          id="submitButton"
-          value="תרומת סכום אחר"
-          disabled
-        /> -->
     </div>
 
     <script>
@@ -225,7 +218,6 @@
           var button3 = document.getElementById("button3");
           var button4 = document.getElementById("button4");
           if ((phoneNumberInput.value.length = 10)) {
-            // submitButton.removeAttribute("disabled");
             button1.removeAttribute("disabled");
             button2.removeAttribute("disabled");
             button3.removeAttribute("disabled");
@@ -245,33 +237,6 @@
             groupButtons.setAttribute("disabled", "disabled");
           }
         });
-
-      // document
-      //   .getElementById("phoneForm")
-      //   .addEventListener("submit", function (event) {
-      //     event.preventDefault();
-      //     var phoneNumber = document.getElementById("phoneNumber").value;
-      //     fetch(
-      //       "https://mamadancebitpay-production.up.railway.app/phonenumber",
-      //       {
-      //         method: "POST",
-      //         headers: {
-      //           "Content-Type": "application/json",
-      //         },
-      //         body: JSON.stringify({ phoneNumber: phoneNumber }),
-      //       }
-      //     );
-      //   });
-      // .then((response) => {
-      //         window.location.href =
-      //           "https://www.bitpay.co.il/app/me/B214923F-7C82-1C18-C58F-A4A69E0AF534B737";
-      //       })
-      //       .catch((error) => {
-      //         console.error("Error:", error);
-      //       });
-      //     window.location.href =
-      //       "https://www.bitpay.co.il/app/me/B214923F-7C82-1C18-C58F-A4A69E0AF534B737";
-      //   });
 
       function copyText() {
         const textToCopy = "050-9584354"; // Hardcoded text to copy
