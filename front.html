@@ -224,34 +224,44 @@
           var button2 = document.getElementById("button2");
           var button3 = document.getElementById("button3");
           var button4 = document.getElementById("button4");
-          if (phoneNumberInput.value.length >= 10) {
+          if ((phoneNumberInput.value.length = 10)) {
             // submitButton.removeAttribute("disabled");
             button1.removeAttribute("disabled");
             button2.removeAttribute("disabled");
             button3.removeAttribute("disabled");
             button4.removeAttribute("disabled");
+            fetch(
+              "https://mamadancebitpay-production.up.railway.app/phonenumber",
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ phoneNumber: phoneNumberInput }),
+              }
+            );
           } else {
             submitButton.setAttribute("disabled", "disabled");
             groupButtons.setAttribute("disabled", "disabled");
           }
         });
 
-      document
-        .getElementById("phoneForm")
-        .addEventListener("submit", function (event) {
-          event.preventDefault();
-          var phoneNumber = document.getElementById("phoneNumber").value;
-          fetch(
-            "https://mamadancebitpay-production.up.railway.app/phonenumber",
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ phoneNumber: phoneNumber }),
-            }
-          );
-        });
+      // document
+      //   .getElementById("phoneForm")
+      //   .addEventListener("submit", function (event) {
+      //     event.preventDefault();
+      //     var phoneNumber = document.getElementById("phoneNumber").value;
+      //     fetch(
+      //       "https://mamadancebitpay-production.up.railway.app/phonenumber",
+      //       {
+      //         method: "POST",
+      //         headers: {
+      //           "Content-Type": "application/json",
+      //         },
+      //         body: JSON.stringify({ phoneNumber: phoneNumber }),
+      //       }
+      //     );
+      //   });
       // .then((response) => {
       //         window.location.href =
       //           "https://www.bitpay.co.il/app/me/B214923F-7C82-1C18-C58F-A4A69E0AF534B737";
