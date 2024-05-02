@@ -211,13 +211,16 @@
       document
         .getElementById("phoneNumber")
         .addEventListener("input", function () {
-          var phoneNumberInput = document.getElementById("phoneNumber");
-          var submitButton = document.getElementById("submitButton");
-          var button1 = document.getElementById("button1");
-          var button2 = document.getElementById("button2");
-          var button3 = document.getElementById("button3");
-          var button4 = document.getElementById("button4");
-          if ((phoneNumberInput.value.length = 10)) {
+          var phoneNumberInput = document.getElementById("phoneNumber").value;
+          var phoneRe =
+            /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+          var digits = phoneNumberInput.replace(/\D/g, "");
+          if (phoneRe.test(digits)) {
+            var submitButton = document.getElementById("submitButton");
+            var button1 = document.getElementById("button1");
+            var button2 = document.getElementById("button2");
+            var button3 = document.getElementById("button3");
+            var button4 = document.getElementById("button4");
             button1.removeAttribute("disabled");
             button2.removeAttribute("disabled");
             button3.removeAttribute("disabled");
@@ -229,7 +232,7 @@
                 headers: {
                   "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ phoneNumber: phoneNumberInput }),
+                body: JSON.stringify({ phoneNumber: phoneNumberInput.value }),
               }
             );
           } else {
