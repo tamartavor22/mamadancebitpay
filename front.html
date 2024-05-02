@@ -16,7 +16,7 @@
       }
       .container {
         width: 80%;
-        height: 50%;
+        height: 80%;
         position: absolute;
         top: 0;
         bottom: 0;
@@ -48,7 +48,8 @@
         text-align: right;
         border-radius: 50px;
       }
-      #submitButton {
+
+      .groupButton {
         padding: 20px 40px;
         background-color: #d82721;
         color: #fff;
@@ -60,9 +61,31 @@
         font-size: 40px;
         margin-top: 30px;
       }
+
+      .groupButton:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+
+      #submitButton {
+        padding: 20px 40px;
+        background-color: #fff;
+        color: #d82721;
+        border-color: #d82721;
+        border-width: 5px;
+        cursor: pointer;
+        border-radius: 50px;
+        outline-width: 0;
+        font-weight: bold;
+        font-size: 40px;
+        margin-top: 30px;
+      }
+
       #submitButton:disabled {
         background-color: #ccc;
         cursor: not-allowed;
+        color: #fff;
+        border: none;
       }
     </style>
   </head>
@@ -77,9 +100,48 @@
           name="phoneNumber"
           placeholder="הזינו את מספר הטלפון שלכם"
         />
+        <div
+          style="display: flex; flex-wrap: wrap; justify-content: space-between"
+        >
+          <!-- Button/Href 2 -->
+          <a
+            href="https://bitpay.poalimlinks.co.il/app/share-info?i=193506298461_19hAhcL1"
+            target="_blank"
+            disabled
+            ><button class="groupButton" id="button2" disabled>
+              תרומה של 50
+            </button></a
+          >
+
+          <!-- Button/Href 1 -->
+          <a
+            href="https://bitpay.poalimlinks.co.il/app/share-info?i=182702853867_19hAhc8F"
+            target="_blank"
+            ><button class="groupButton" id="button1" disabled>
+              תרומה של 20
+            </button></a
+          >
+
+          <!-- Button/Href 4 -->
+          <a
+            href="https://bitpay.poalimlinks.co.il/app/share-info?i=182702853867_19hAhcOP"
+            target="_blank"
+            ><button class="groupButton" id="button4" disabled>
+              תרומה של 200
+            </button></a
+          >
+          <!-- Button/Href 3 -->
+          <a
+            href="https://bitpay.poalimlinks.co.il/app/share-info?i=193506298461_19hAhcMB"
+            target="_blank"
+            ><button class="groupButton" id="button3" disabled>
+              תרומה של 100
+            </button></a
+          >
+        </div>
 
         <p onclick="copyText()" style="font-size: 50px; margin-bottom: 0px">
-          העבירו את התשלום למספר הטלפון הבא
+          לבחירת סכום אחר העתיקו את מספר הטלפון הבא
         </p>
         <div
           style="
@@ -143,7 +205,12 @@
             050-9584354
           </p>
         </div>
-        <input type="submit" id="submitButton" value="מעבר לביט" disabled />
+        <input
+          type="submit"
+          id="submitButton"
+          value="תרומת סכום אחר"
+          disabled
+        />
       </form>
     </div>
 
@@ -153,10 +220,19 @@
         .addEventListener("input", function () {
           var phoneNumberInput = document.getElementById("phoneNumber");
           var submitButton = document.getElementById("submitButton");
+          var button1 = document.getElementById("button1");
+          var button2 = document.getElementById("button2");
+          var button3 = document.getElementById("button3");
+          var button4 = document.getElementById("button4");
           if (phoneNumberInput.value.length >= 10) {
             submitButton.removeAttribute("disabled");
+            button1.removeAttribute("disabled");
+            button2.removeAttribute("disabled");
+            button3.removeAttribute("disabled");
+            button4.removeAttribute("disabled");
           } else {
             submitButton.setAttribute("disabled", "disabled");
+            groupButtons.setAttribute("disabled", "disabled");
           }
         });
 
