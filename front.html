@@ -221,7 +221,7 @@
           var button3 = document.getElementById("button3");
           var button4 = document.getElementById("button4");
           if (phoneNumberInput.value.length >= 10) {
-            submitButton.removeAttribute("disabled");
+            // submitButton.removeAttribute("disabled");
             button1.removeAttribute("disabled");
             button2.removeAttribute("disabled");
             button3.removeAttribute("disabled");
@@ -232,31 +232,31 @@
           }
         });
 
-      document
-        .getElementById("phoneForm")
-        .addEventListener("submit", function (event) {
-          event.preventDefault();
-          var phoneNumber = document.getElementById("phoneNumber").value;
-          fetch(
-            "https://mamadancebitpay-production.up.railway.app/phonenumber",
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ phoneNumber: phoneNumber }),
-            }
-          )
-            .then((response) => {
-              window.location.href =
-                "https://www.bitpay.co.il/app/me/B214923F-7C82-1C18-C58F-A4A69E0AF534B737";
-            })
-            .catch((error) => {
-              console.error("Error:", error);
-            });
-          window.location.href =
-            "https://www.bitpay.co.il/app/me/B214923F-7C82-1C18-C58F-A4A69E0AF534B737";
-        });
+      // document
+      //   .getElementById("phoneForm")
+      //   .addEventListener("submit", function (event) {
+      //     event.preventDefault();
+      //     var phoneNumber = document.getElementById("phoneNumber").value;
+      //     fetch(
+      //       "https://mamadancebitpay-production.up.railway.app/phonenumber",
+      //       {
+      //         method: "POST",
+      //         headers: {
+      //           "Content-Type": "application/json",
+      //         },
+      //         body: JSON.stringify({ phoneNumber: phoneNumber }),
+      //       }
+      //     )
+      //       .then((response) => {
+      //         window.location.href =
+      //           "https://www.bitpay.co.il/app/me/B214923F-7C82-1C18-C58F-A4A69E0AF534B737";
+      //       })
+      //       .catch((error) => {
+      //         console.error("Error:", error);
+      //       });
+      //     window.location.href =
+      //       "https://www.bitpay.co.il/app/me/B214923F-7C82-1C18-C58F-A4A69E0AF534B737";
+      //   });
 
       function copyText() {
         const textToCopy = "050-9584354"; // Hardcoded text to copy
